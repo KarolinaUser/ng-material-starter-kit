@@ -1,0 +1,14 @@
+ <p>EXERCISES 1 - SINGLE PART LIST</p>
+
+<mat-list *ngFor=" let names of name$ | async; let i = index" >
+    <mat-list-item >{{ i + 1}} {{names}}</mat-list-item>
+</mat-list>
+
+<p>EXERCISES 2 - SINGLE PART LIST </p> 
+
+<mat-chip-list aria-label="Fish selection">
+  <mat-chip *ngFor="let item of crypto$ | async">
+ {{item.symbol}}
+</mat-chip>
+</mat-chip-list>
+  
