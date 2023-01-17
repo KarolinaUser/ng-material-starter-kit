@@ -1,4 +1,36 @@
-<mat-list role="list" *ngIf=" productName$ | async as products; else loading">
+ <strong>TABLE VERSION</strong>
+ 
+ <ng-container *ngIf="productName$ | async as list">
+      <table mat-table [dataSource]="list" class="mat-elevation-z8">         
+        <ng-container matColumnDef="column1">
+          <th mat-header-cell *matHeaderCellDef> IMAGE </th>
+          <td mat-cell *matCellDef="let product"> <img class="imageStyle" src="{{product.image}}"> </td>
+        </ng-container>
+     
+        <ng-container matColumnDef="column2">
+          <th mat-header-cell *matHeaderCellDef> TITLE </th>
+          <td mat-cell *matCellDef="let product"> {{product.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="column3">
+            <th mat-header-cell *matHeaderCellDef> CATEGORY </th>
+            <td mat-cell *matCellDef="let product"> {{product.category}}"> </td>
+          </ng-container>
+
+          <ng-container matColumnDef="column4">
+            <th mat-header-cell *matHeaderCellDef> PRICE </th>
+            <td mat-cell *matCellDef="let product"> {{ product.price | currency: 'USD'  }} </td>
+          </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['column1', 'column2', 'column3', 'column4']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['column1', 'column2', 'column3', 'column4'];"></tr>  
+      </table>
+    </ng-container>
+
+
+<strong>LIST VERSION</strong>
+
+    <mat-list role="list" *ngIf=" productName$ | async as products; else loading">
     <strong>PRODUCTS LIST</strong>
     <ng-container *ngIf=" products.length > 0; else emptyState">
         <mat-list-item role="listitem" *ngFor="let item of productName$ | async"> 
@@ -17,3 +49,5 @@
     <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [value]="50">
     </mat-progress-spinner>
 </ng-template>
+
+
