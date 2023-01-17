@@ -6,12 +6,14 @@ import { ProductLoadingListComponent } from './components/product-loading-list/p
 import { LoadingChipListComponent } from './components/loading-chip-list/loading-chip-list.component';
 import { CategoriesLoadingComponent } from './components/categories-loading/categories-loading.component';
 import { SelectCategoriesComponent } from './components/select-categories/select-categories.component';
+import { CryptoTableComponent } from './components/crypto-table/crypto-table.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
 import { LoadingChipListComponentModule } from './components/loading-chip-list/loading-chip-list.component-module';
 import { CategoriesLoadingComponentModule } from './components/categories-loading/categories-loading.component-module';
 import { SelectCategoriesComponentModule } from './components/select-categories/select-categories.component-module';
+import { CryptoTableComponentModule } from './components/crypto-table/crypto-table.component-module';
 
 @NgModule({
   imports: [
@@ -21,14 +23,16 @@ import { SelectCategoriesComponentModule } from './components/select-categories/
       { path: 'products', component: ProductLoadingListComponent },
       { path: 'crypto', component: LoadingChipListComponent },
       { path: 'categories', component: CategoriesLoadingComponent },
-      { path: 'category', component: SelectCategoriesComponent }
+      { path: 'category', component: SelectCategoriesComponent },
+      { path: 'crypto-table', component: CryptoTableComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
     ProductLoadingListComponentModule,
     LoadingChipListComponentModule,
     CategoriesLoadingComponentModule,
-    SelectCategoriesComponentModule
+    SelectCategoriesComponentModule,
+    CryptoTableComponentModule
   ],
   exports: [RouterModule],
 })
