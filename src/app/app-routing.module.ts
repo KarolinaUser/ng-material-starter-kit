@@ -7,6 +7,7 @@ import { LoadingChipListComponent } from './components/loading-chip-list/loading
 import { CategoriesLoadingComponent } from './components/categories-loading/categories-loading.component';
 import { SelectCategoriesComponent } from './components/select-categories/select-categories.component';
 import { CryptoTableComponent } from './components/crypto-table/crypto-table.component';
+import { JobComponent } from './components/job/job.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
@@ -14,6 +15,7 @@ import { LoadingChipListComponentModule } from './components/loading-chip-list/l
 import { CategoriesLoadingComponentModule } from './components/categories-loading/categories-loading.component-module';
 import { SelectCategoriesComponentModule } from './components/select-categories/select-categories.component-module';
 import { CryptoTableComponentModule } from './components/crypto-table/crypto-table.component-module';
+import { JobComponentModule } from './components/job/job.component-module';
 
 @NgModule({
   imports: [
@@ -24,7 +26,8 @@ import { CryptoTableComponentModule } from './components/crypto-table/crypto-tab
       { path: 'crypto', component: LoadingChipListComponent },
       { path: 'categories', component: CategoriesLoadingComponent },
       { path: 'category', component: SelectCategoriesComponent },
-      { path: 'crypto-table', component: CryptoTableComponent }
+      { path: 'crypto-table', component: CryptoTableComponent },
+      { path: 'job-post-table', component: JobComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
@@ -32,7 +35,8 @@ import { CryptoTableComponentModule } from './components/crypto-table/crypto-tab
     LoadingChipListComponentModule,
     CategoriesLoadingComponentModule,
     SelectCategoriesComponentModule,
-    CryptoTableComponentModule
+    CryptoTableComponentModule,
+    JobComponentModule
   ],
   exports: [RouterModule],
 })
