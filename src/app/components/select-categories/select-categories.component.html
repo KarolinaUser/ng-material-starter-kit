@@ -1,0 +1,21 @@
+<strong>SELECT CATEGORY</strong>
+
+<mat-selection-list role="list" *ngIf="selectCategory$ | async as selectCategory; else spinner">
+    <ng-container *ngIf="selectCategory.length > 0; else emptyState" >
+    <mat-list-option role="listitem"
+        *ngFor="let item of selectCategory$ | async">{{item}}
+    </mat-list-option>
+    </ng-container>
+</mat-selection-list>
+
+ <ng-template #emptyState>
+      Oops! There is no data!
+    </ng-template>
+
+<ng-template #spinner>
+<mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-spinner>
+</ng-template>

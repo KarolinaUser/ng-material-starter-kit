@@ -1,10 +1,25 @@
-<p>EXERCISES 6 - SINGLE PART LIST</p>
+<p>HOLIDAYS</p>
 
 <mat-form-field appearance="fill">
   <mat-label>Choose an option</mat-label>
-  <mat-select>
+  <ng-container *ngIf="hollyday$ | async as hollyday; else progressBar">
+  <mat-select *ngIf="hollyday.length > 0; else emptyState">
     <mat-option *ngFor="let item of hollyday$ | async" [value]="item">
      {{item.localName}}    
 </mat-option>
    </mat-select>
+</ng-container>
 </mat-form-field>
+
+ <ng-template #emptyState>
+      Oops! There is no data!
+    </ng-template>
+
+<ng-template #progressBar>
+ <mat-progress-bar
+        class="example-margin"
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-bar>
+</ng-template>
