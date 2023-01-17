@@ -1,8 +1,11 @@
 <mat-list role="list" *ngIf=" productName$ | async as products; else loading">
     <strong>PRODUCTS LIST</strong>
     <ng-container *ngIf=" products.length > 0; else emptyState">
-        <mat-list-item role="listitem" *ngFor="let item of productName$ | async">{{item.title}}
-            {{item.price}}</mat-list-item>
+        <mat-list-item role="listitem" *ngFor="let item of productName$ | async"> 
+            <img class="imageStyle" src="{{item.image}}">
+            {{item.title}}
+            {{item.price | currency: 'USD'}}
+        </mat-list-item>
     </ng-container>
 </mat-list>
 
