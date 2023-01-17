@@ -1,0 +1,21 @@
+<strong>CHIP LIST LOADING AND EMPTY STATE</strong>
+
+<mat-chip-list aria-label="Fish selection" *ngIf="chipList$ | async as chipList; else loadingSpinner">
+   <ng-container *ngIf="chipList.length > 0; else emptyState">
+    <mat-chip *ngFor="let item of chipList$ | async">
+        {{item.symbol}}
+    </mat-chip>
+</ng-container>
+</mat-chip-list>
+
+ <ng-template #emptyState>
+      Oops! There is no data!
+    </ng-template>
+
+<ng-template #loadingSpinner>
+<mat-progress-spinner
+        [color]="'primary'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-spinner>
+</ng-template>
