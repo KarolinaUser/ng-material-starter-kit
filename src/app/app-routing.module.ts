@@ -9,6 +9,7 @@ import { SelectCategoriesComponent } from './components/select-categories/select
 import { CryptoTableComponent } from './components/crypto-table/crypto-table.component';
 import { JobComponent } from './components/job/job.component';
 import { GridListComponent } from './components/grid-list/grid-list.component';
+import { InfluencerComponent } from './components/influencer/influencer.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
@@ -18,6 +19,7 @@ import { SelectCategoriesComponentModule } from './components/select-categories/
 import { CryptoTableComponentModule } from './components/crypto-table/crypto-table.component-module';
 import { JobComponentModule } from './components/job/job.component-module';
 import { GridListComponentModule } from './components/grid-list/grid-list.component-module';
+import { InfluencerComponentModule } from './components/influencer/influencer.component-module';
 
 @NgModule({
   imports: [
@@ -30,7 +32,8 @@ import { GridListComponentModule } from './components/grid-list/grid-list.compon
       { path: 'category', component: SelectCategoriesComponent },
       { path: 'crypto-table', component: CryptoTableComponent },
       { path: 'job-post-table', component: JobComponent },
-      { path: 'gridList', component: GridListComponent }
+      { path: 'gridList', component: GridListComponent },
+      { path: 'influencer', component: InfluencerComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
@@ -40,7 +43,8 @@ import { GridListComponentModule } from './components/grid-list/grid-list.compon
     SelectCategoriesComponentModule,
     CryptoTableComponentModule,
     JobComponentModule,
-    GridListComponentModule
+    GridListComponentModule,
+    InfluencerComponentModule
   ],
   exports: [RouterModule],
 })

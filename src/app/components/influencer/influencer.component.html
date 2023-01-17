@@ -1,0 +1,11 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of influencer$ | async">
+        <img class="influImg" src="{{item.avatar}}">
+        {{item.name}}
+        <mat-chip-list aria-label="Fish selection">
+            <mat-chip *ngFor="let name of item.followedBy">
+                {{name.name}}
+            </mat-chip>
+        </mat-chip-list>
+    </mat-list-item>
+</mat-list>
