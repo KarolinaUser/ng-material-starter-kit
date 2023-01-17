@@ -8,6 +8,7 @@ import { CategoriesLoadingComponent } from './components/categories-loading/cate
 import { SelectCategoriesComponent } from './components/select-categories/select-categories.component';
 import { CryptoTableComponent } from './components/crypto-table/crypto-table.component';
 import { JobComponent } from './components/job/job.component';
+import { GridListComponent } from './components/grid-list/grid-list.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
@@ -16,6 +17,7 @@ import { CategoriesLoadingComponentModule } from './components/categories-loadin
 import { SelectCategoriesComponentModule } from './components/select-categories/select-categories.component-module';
 import { CryptoTableComponentModule } from './components/crypto-table/crypto-table.component-module';
 import { JobComponentModule } from './components/job/job.component-module';
+import { GridListComponentModule } from './components/grid-list/grid-list.component-module';
 
 @NgModule({
   imports: [
@@ -27,7 +29,8 @@ import { JobComponentModule } from './components/job/job.component-module';
       { path: 'categories', component: CategoriesLoadingComponent },
       { path: 'category', component: SelectCategoriesComponent },
       { path: 'crypto-table', component: CryptoTableComponent },
-      { path: 'job-post-table', component: JobComponent }
+      { path: 'job-post-table', component: JobComponent },
+      { path: 'gridList', component: GridListComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
@@ -36,7 +39,8 @@ import { JobComponentModule } from './components/job/job.component-module';
     CategoriesLoadingComponentModule,
     SelectCategoriesComponentModule,
     CryptoTableComponentModule,
-    JobComponentModule
+    JobComponentModule,
+    GridListComponentModule
   ],
   exports: [RouterModule],
 })
