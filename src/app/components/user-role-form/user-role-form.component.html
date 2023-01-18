@@ -1,0 +1,17 @@
+<form [formGroup]="userRole" (ngSubmit)="onUserRoleSubmitted(userRole)">
+    <div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Choose an user Role</mat-label>
+            <mat-select formControlName="role" required>
+                <mat-option *ngFor="let item of useRole$ | async" [value]="item">
+                    {{item.role}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="userRole.get('role')!.invalid">User Role is required</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </div>
+</form>
