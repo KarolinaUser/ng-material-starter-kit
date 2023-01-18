@@ -42,18 +42,30 @@
     <div>
         <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-            <input
-             matInput 
-             type="text" 
-             placeholder="Email"
-             formControlName="email" 
-             required>
-                <mat-error *ngIf="emailForm.get('email')!.invalid">email is invalid</mat-error>
-            </mat-form-field>
-        </div>
+            <input matInput type="text" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="emailForm.get('email')!.invalid">email is invalid</mat-error>
+        </mat-form-field>
+    </div>
     <div>
         <button type="submit" mat-raised-button color="primary" [disabled]="!emailForm.valid">Submit</button>
     </div>
 
     {{emailForm.valueChanges | async | json}}
+</form>
+
+<!-- ZADANIE 4 Form - Control - Comment -->
+
+<form [formGroup]="commentForm" (ngSubmit)="onCommentFormSubmitted(commentForm)">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Comment</mat-label>
+            <textarea
+            matInput type="text"
+            placeholder="Comment" 
+            formControlName="comment" 
+            required>
+        </textarea>
+                <mat-error *ngIf="commentForm.get('comment')!.invalid">comment is invalid! You needs to have min. of 4 words</mat-error>
+            </mat-form-field>
+        </div>
 </form>
