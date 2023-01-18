@@ -12,11 +12,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormsExampleComponent {
 
   readonly formName: FormGroup = new FormGroup({
+
     name: new FormControl('', [Validators.required, Validators.minLength(3)])
+
   });
 
   onFormNameSubmitted(formName: FormGroup): void {
-   console.log(formName.value)
-    
+    console.log(formName.value)
+
+  }
+
+
+  readonly age: FormGroup = new FormGroup({
+    age: new FormControl('18', [Validators.required, Validators.min(18)])
+  });
+
+  onAgeSubmitted(age: FormGroup): void {
   }
 }

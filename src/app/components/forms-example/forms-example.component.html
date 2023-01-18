@@ -1,3 +1,5 @@
+<!-- ZADANIE 1 Form - Control - Name -->
+
 <form [formGroup]="formName" (ngSubmit)="onFormNameSubmitted(formName)">
     <div>
         <mat-form-field appearance="fill">
@@ -7,17 +9,37 @@
         </mat-form-field>
     </div>
     <div>
+        <button type="submit" mat-raised-button [disabled]="!formName.valid" color="primary">Submit</button>
+    </div>
+    <p> {{formName.valueChanges | async | json}}</p>
+    <p>{{formName.value.name}}</p>
+</form>
+
+
+
+<!-- ZADANIE 2 Form - Control - AGE -->
+
+<form [formGroup]="age" (ngSubmit)="onAgeSubmitted(age)">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input 
+            matInput 
+            type="number" 
+            placeholder="Age" 
+            formControlName="age" 
+            required
+            >
+            <mat-error *ngIf="age.get('age')!.invalid">age is
+                invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
         <button 
         type="submit" 
         mat-raised-button 
-        [disabled]="!formName.valid"
-        color="primary">Submit</button>
+        color="primary"
+        [disabled]="!age.valid">Submit</button>
     </div>
+    {{age.valueChanges | async | json}}
 </form>
-
-<p> {{formName.valueChanges | async | json}}</p>
-
-<p>{{formName.value.name}}</p>
-   
-
-    
