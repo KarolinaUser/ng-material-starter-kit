@@ -12,6 +12,7 @@ import { GridListComponent } from './components/grid-list/grid-list.component';
 import { InfluencerComponent } from './components/influencer/influencer.component';
 import { FormsExampleComponent } from './components/forms-example/forms-example.component';
 import { UserRoleFormComponent } from './components/user-role-form/user-role-form.component';
+import { UnivarsityRadioFormComponent } from './components/univarsity-radio-form/univarsity-radio-form.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
@@ -24,6 +25,7 @@ import { GridListComponentModule } from './components/grid-list/grid-list.compon
 import { InfluencerComponentModule } from './components/influencer/influencer.component-module';
 import { FormsExampleComponentModule } from './components/forms-example/forms-example.component-module';
 import { UserRoleFormComponentModule } from './components/user-role-form/user-role-form.component-module';
+import { UnivarsityRadioFormComponentModule } from './components/univarsity-radio-form/univarsity-radio-form.component-module';
 
 @NgModule({
   imports: [
@@ -39,7 +41,8 @@ import { UserRoleFormComponentModule } from './components/user-role-form/user-ro
       { path: 'gridList', component: GridListComponent },
       { path: 'influencer', component: InfluencerComponent },
       { path: 'form', component: FormsExampleComponent },
-      { path: 'userRoleForm', component: UserRoleFormComponent }
+      { path: 'userRoleForm', component: UserRoleFormComponent },
+      { path: 'university', component: UnivarsityRadioFormComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
@@ -52,7 +55,8 @@ import { UserRoleFormComponentModule } from './components/user-role-form/user-ro
     GridListComponentModule,
     InfluencerComponentModule,
     FormsExampleComponentModule,
-    UserRoleFormComponentModule
+    UserRoleFormComponentModule,
+    UnivarsityRadioFormComponentModule
   ],
   exports: [RouterModule],
 })
