@@ -1,0 +1,23 @@
+<form [formGroup]="formName" (ngSubmit)="onFormNameSubmitted(formName)">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Name" formControlName="name" required>
+            <mat-error *ngIf="formName.get('name')!.invalid">name is invalid</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <button 
+        type="submit" 
+        mat-raised-button 
+        [disabled]="!formName.valid"
+        color="primary">Submit</button>
+    </div>
+</form>
+
+<p> {{formName.valueChanges | async | json}}</p>
+
+<p>{{formName.value.name}}</p>
+   
+
+    

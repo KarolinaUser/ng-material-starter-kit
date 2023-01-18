@@ -10,6 +10,7 @@ import { CryptoTableComponent } from './components/crypto-table/crypto-table.com
 import { JobComponent } from './components/job/job.component';
 import { GridListComponent } from './components/grid-list/grid-list.component';
 import { InfluencerComponent } from './components/influencer/influencer.component';
+import { FormsExampleComponent } from './components/forms-example/forms-example.component';
 import { ListExercisesComponentModule } from './components/list-exercises/list-exercises.component-module';
 import { HollydayComponentModule } from './components/hollyday/hollyday.component-module';
 import { ProductLoadingListComponentModule } from './components/product-loading-list/product-loading-list.component-module';
@@ -20,6 +21,7 @@ import { CryptoTableComponentModule } from './components/crypto-table/crypto-tab
 import { JobComponentModule } from './components/job/job.component-module';
 import { GridListComponentModule } from './components/grid-list/grid-list.component-module';
 import { InfluencerComponentModule } from './components/influencer/influencer.component-module';
+import { FormsExampleComponentModule } from './components/forms-example/forms-example.component-module';
 
 @NgModule({
   imports: [
@@ -33,7 +35,8 @@ import { InfluencerComponentModule } from './components/influencer/influencer.co
       { path: 'crypto-table', component: CryptoTableComponent },
       { path: 'job-post-table', component: JobComponent },
       { path: 'gridList', component: GridListComponent },
-      { path: 'influencer', component: InfluencerComponent }
+      { path: 'influencer', component: InfluencerComponent },
+      { path: 'form', component: FormsExampleComponent }
     ]),
     ListExercisesComponentModule,
     HollydayComponentModule,
@@ -44,7 +47,8 @@ import { InfluencerComponentModule } from './components/influencer/influencer.co
     CryptoTableComponentModule,
     JobComponentModule,
     GridListComponentModule,
-    InfluencerComponentModule
+    InfluencerComponentModule,
+    FormsExampleComponentModule
   ],
   exports: [RouterModule],
 })
